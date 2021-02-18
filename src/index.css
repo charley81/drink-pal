@@ -10,6 +10,7 @@
   --fontFamily: 'Space Grotesk', sans-serif;
   --borderRadius: 3px;
   --transition: all 0.3s ease-in-out;
+  --maxWidth: 900px;
   --colorPrimary: #ccfbfe;
   --colorLight: #fdfffc;
   --colorMed: #cdd6dd;
@@ -22,4 +23,9 @@ body {
   font-family: var(--fontFamily);
   background-color: var(--colorLight);
   color: var(--colorDark);
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
 }

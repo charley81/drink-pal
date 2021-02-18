@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const errorPage = () => {
+export const Error = () => {
   return (
     <div>
       <h2>error page</h2>
