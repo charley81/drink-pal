@@ -24,5 +24,14 @@ export const DrinkList = () => {
     )
   }
 
-  return <div>drink list component</div>
+  return (
+    <section>
+      <h2>drinks</h2>
+      <div>
+        {drinks.map(drink => (
+          <Drink key={drink.id} {...drink} />
+        ))}
+      </div>
+    </section>
+  )
 }

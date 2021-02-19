@@ -18,6 +18,8 @@ export const AppProvider = ({ children }) => {
       const data = await response.json()
       const { drinks } = data
 
+      console.log(drinks)
+
       if (drinks) {
         const newDrinks = drinks.map(drink => {
           const {
