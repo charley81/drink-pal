@@ -25,9 +25,24 @@ export const DrinkList = () => {
   }
 
   return (
-    <section>
-      <h2>drinks</h2>
-      <div>
+    <section
+      css={css`
+        text-align: center;
+
+        h2 {
+          margin: 1rem auto 3rem;
+          border-bottom: 1px solid var(--colorMed);
+          width: 50%;
+        }
+        .drink-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          display: grid;
+          grid-gap: 1rem;
+        }
+      `}
+    >
+      <h2>Drink List</h2>
+      <div className="drink-container">
         {drinks.map(drink => (
           <Drink key={drink.id} {...drink} />
         ))}
