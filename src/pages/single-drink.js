@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import { useState, useEffect } from 'react'
 import { Loading } from '../components/loading'
 import { useParams, Link } from 'react-router-dom'
@@ -78,37 +80,67 @@ export const SingleDrink = () => {
     ingredients,
   } = drink
 
-  console.log(drink)
-
   return (
-    <section>
-      <Link to="/">Back Home</Link>
+    <section
+      css={css`
+        padding: 1rem;
+        margin-top: 2rem;
+
+        .btn {
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+          margin-bottom: 2rem;
+          border: 1px solid var(--colorDark);
+          color: var(--colorDark);
+          border-radius: var(--borderRadius);
+          transition: var(--transition);
+
+          &:hover {
+            background: var(--colorDark);
+            color: var(--colorLight);
+          }
+        }
+
+        p {
+          margin: 0.5rem 0;
+        }
+
+        .bold {
+          background: var(--colorDark);
+          color: var(--colorLight);
+          padding: 0 0.5rem;
+        }
+      `}
+    >
+      <Link to="/" className="btn">
+        Back Home
+      </Link>
       <h2>{name}</h2>
       <div className="drink">
         <img src={image} alt={name} />
         <div className="drink-info">
           <p>
-            name: <span>{name}</span>
+            <span className="bold">name:</span> {name}
           </p>
           <p>
-            category: <span>{category}</span>
+            <span className="bold">category:</span> {category}
           </p>
           <p>
-            info: <span>{info}</span>
+            <span className="bold">info:</span> {info}
           </p>
           <p>
-            glass: <span>{glass}</span>
+            <span className="bold">glass:</span> {glass}
           </p>
           <p>
-            instructions: <span>{instructions}</span>
+            <span className="bold">instructions:</span> {instructions}
           </p>
           <p>
-            ingredients:{' '}
-            <span>
-              {ingredients.map((item, index) => {
-                return item ? <span key={index}>{item}</span> : null
-              })}
-            </span>
+            <span className="bold">ingredients:</span>
+            {'  '}
+            {ingredients.map((item, index) => {
+              return item ? <span key={index}>{item}</span> : null
+            })}
           </p>
         </div>
       </div>
