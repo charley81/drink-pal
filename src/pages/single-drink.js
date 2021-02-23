@@ -84,7 +84,13 @@ export const SingleDrink = () => {
     <section
       css={css`
         padding: 1rem;
-        margin-top: 2rem;
+        margin: 2rem auto 0;
+        max-width: var(--maxWidth);
+
+        .image {
+          display: block;
+          margin: 0 auto 1rem;
+        }
 
         .btn {
           display: block;
@@ -111,6 +117,15 @@ export const SingleDrink = () => {
           color: var(--colorLight);
           padding: 0 0.5rem;
         }
+
+        @media screen and (min-width: 992px) {
+          .drink {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 3rem;
+            align-items: center;
+          }
+        }
       `}
     >
       <Link to="/" className="btn">
@@ -118,7 +133,7 @@ export const SingleDrink = () => {
       </Link>
       <h2>{name}</h2>
       <div className="drink">
-        <img src={image} alt={name} />
+        <img src={image} alt={name} className="image" />
         <div className="drink-info">
           <p>
             <span className="bold">name:</span> {name}
