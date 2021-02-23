@@ -9,6 +9,8 @@ export const Home = () => {
     <main
       css={css`
         padding: 1rem;
+        max-width: 1100px;
+        margin: auto;
       `}
     >
       <SearchForm />
