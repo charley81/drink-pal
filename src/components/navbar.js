@@ -11,6 +11,7 @@ export const Navbar = () => {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
 
         ul {
           display: flex;

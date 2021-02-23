@@ -15,7 +15,6 @@ export const Drink = ({ id, image, glass, info, name }) => {
         img {
           width: 100%;
           height: auto;
-          border-radius: var(--borderRadius);
         }
 
         .info {
